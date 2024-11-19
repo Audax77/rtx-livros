@@ -1,0 +1,104 @@
+/* Estilo geral */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #000;
+    color: #a020f0;
+    overflow-x: hidden;
+}
+
+/* Cabeçalho */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #1a1a1a;
+    border-bottom: 2px solid #a020f0;
+    flex-wrap: wrap;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 24px;
+    flex: 1;
+    text-align: center;
+}
+
+#search-bar {
+    width: 100%;
+    max-width: 300px;
+    padding: 8px;
+    border: 2px solid #a020f0;
+    border-radius: 5px;
+    background-color: #000;
+    color: #a020f0;
+    outline: none;
+}
+
+#search-bar::placeholder {
+    color: #a020f0;
+}
+
+/* Slider de livros */
+#book-slider {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    overflow-x: auto;
+    scrollbar-width: none;
+    scroll-snap-type: x mandatory;
+}
+
+#book-slider::-webkit-scrollbar {
+    display: none;
+}
+
+.book {
+    min-width: 150px;
+    max-width: 200px;
+    aspect-ratio: 2 / 3;
+    background-size: cover;
+    background-position: center;
+    border: 2px solid #a020f0;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s;
+    scroll-snap-align: start;
+}
+
+.book:hover {
+    transform: scale(1.1);
+}
+
+/* Estilo responsivo */
+@media (max-width: 768px) {
+    #book-slider {
+        gap: 10px;
+        padding: 10px;
+    }
+
+    .book {
+        min-width: 120px;
+        max-width: 150px;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #search-bar {
+        width: 90%;
+    }
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #1a1a1a;
+    border-top: 2px solid #a020f0;
+    font-size: 14px;
+}
